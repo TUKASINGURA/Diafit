@@ -22,13 +22,13 @@ export default function SettingScreen({navigation}) {
         <View style={styles.container}>
             <View style={styles.imageContainer}>
                 <Image
-                    source={{ uri: "https://i.pinimg.com/564x/12/95/5d/12955dd2c20ee567d155b75487aa7bbf.jpg" }}
+                    source={{ uri: "https://as2.ftcdn.net/v2/jpg/01/30/57/01/1000_F_130570116_VVNkhx2cwM2PWWtSwaBpc7HhtQAOw7iH.jpg" }}
                     style={styles.image}
                 />
             </View>
             <View style={styles.userInfo}>
-                <Text style={styles.username}>Fedora</Text>
-                <Text style={styles.userType}>Type 2</Text>
+                <Text style={styles.username}>Hannigton </Text>
+                <Text style={styles.userType}>Nuwagira</Text>
             </View>
             <View>
                 <Card onPress={()=>{navigation.navigate("records")}} style={[customstyles.mh_10, customstyles.mt_5]}>

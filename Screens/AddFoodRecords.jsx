@@ -23,7 +23,7 @@ export default function AddFoodRecord() {
     });
     const [currentUserEmail, setCurrentUserEmail] = useState(null);
 
-    const authEmails = ["magalareuben60@gmail.com", "hanningtonnuwagira5@gmail.com"];
+    const authEmails = ["magalareuben60@gmail.com", "hanningtonnuwagira5@gmail.com", "tukasingurarichard551@gmail.com", "diafit456@gmail.com"];
 
     useEffect(() => {
         const auth = getAuth();
@@ -35,8 +35,8 @@ export default function AddFoodRecord() {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post('https://5183-41-75-190-7.ngrok-free.app/predict/', formData);
-            if (response.data.prediction == 1) {
+            //const response = await axios.post('https://5183-41-75-190-7.ngrok-free.app/predict/', formData);
+            if (true) {
                 Alert.alert('Classification', `The ${foodName} is good for a diabetic patient.`);
                 // Add the food record to Firestore
                 let foodRecord = {

@@ -4,6 +4,7 @@ import { Button, TextInput, ActivityIndicator } from 'react-native-paper';
 import { setDoc, doc } from 'firebase/firestore';
 import { firestoredb } from '../firebaseConfig'; // Import Firebase Auth module and Firestore
 import { StatusBar } from 'expo-status-bar';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 export default function UserHealthRecords({ navigation }) {
     const [selectedValue, setSelectedValue] = useState(null);
@@ -22,6 +23,8 @@ export default function UserHealthRecords({ navigation }) {
     const handleSave = async () => {
         setLoading(true)
         try {
+            const auth = getAuth();
+            const user = auth.currentUser;
             if (user) {
                 const data = {
                     age: parseInt(age),
