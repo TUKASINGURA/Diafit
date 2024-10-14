@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+
+<body>
+    <div class="ListPart">
+        <ul class="ListPartHdr">
+            <form action="">
+                <input type="text" placeholder="Search">
+            </form>
+            <li>Manage</li>
+            <li>Process</li>
+            <li>Prepare</li>
+            <li>Line</li>
+            <input type="button" value="Export" class="export" onclick="exportToExcel()">
+            <input type="button" value="Import">
+        </ul>
+        <div class="input-Area">
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="select-check hide-checkbox"><input type="checkbox"></th>
+                        <th>Type</th>
+                        <th></th>
+                        <th>Description</th>
+                        <th>Last Name</th>
+                        <th>Job Title</th>
+                        <th>Search</th>
+                        <th>Employee No</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="active-line"></td>
+                        <td class="hide-checkbox"><input type="checkbox"></td>
+                        <td><input type="text" class="input-box"></td>
+                        <td class="dropdown">
+                            <input type="button" class="input-box sel-box" value=":">
+                            <div class="dropdown-content">
+                                <a href="#" class="select-more">Select More</a>
+                                <a href="#">New Line</a>
+                                <a href="#">Delete</a>
+                            </div>
+                        </td>
+                        <td><input type="text" class="input-box"></td>
+                        <td><input type="text" class="input-box"></td>
+                        <td><input type="text" class="input-box"></td>
+                        <td><input type="text" class="input-box"></td>
+                        <td><input type="text" class="input-box"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<script src="scripts.js"></script>
+<script>
+    function exportToExcel() {
+        // Get the table data
+        var table = document.getElementById("trial");
+
+        // Create a new workbook
+        var wb = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+
+        // Export the workbook to Excel format
+        XLSX.writeFile(wb, "table_data.xlsx");
+    }
+</script>
+
+</body>
+
+</html>
